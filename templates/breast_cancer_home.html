@@ -1,0 +1,171 @@
+<!-- </head> -->
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <title>Prediction</title>
+
+    <!-- <title>Heart Disease Diagnosis</title> -->
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/fontawesome.min.css">
+</head>
+
+<body>
+
+    <section class="header_breast_cancer">
+        <nav>
+            <a href="{{url_for('home')}}"><img src="static/images/logo.png"></a>
+            <div class="nav-links" id="navlinks">
+
+                <ul>
+                    <li><a href="{{url_for('home')}}">Home</a></li>
+                    <li><a href="url_for('home')}}">Diagnosis</a></li>
+                    <li><a href="url_for('home')}}">About</a></li>
+
+                </ul>
+    </section>
+
+
+
+
+
+
+    <section class="course">
+        <h1>Information Required for Diagnosis</h1> <br>
+        <p>Read it carefully</p>
+
+        <div class="row">
+            <div class="course-col">
+                <h3>Mean Radius</h3>
+
+                <p>Radius (mean of distances from center to points on the perimeter).</p>
+            </div>
+
+
+
+
+            <div class="course-col">
+
+
+                <h4>Mean Texture</h4>
+                <p> Texture (standard deviation of gray-scale values).</p>
+            </div>
+
+
+            <div class="course-col">
+
+                <h4>Mean Perimeter</h4>
+                <p>Mean Perimeter.</p>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="course-col">
+
+                <h4>Mean Area</h4>
+                <p>Mean Area.</p>
+            </div>
+        
+
+            <div class="course-col">
+
+                <h4>Mean Smoothness</h4>
+                <p>smoothness (local variation in radius lengths)</p>
+            </div>
+        
+
+            <div class="course-col">
+
+            </div>
+        </div>
+       
+
+
+        </div>
+
+        </div>
+    </section>
+
+
+
+    <section class="course">
+        <form action="{{ url_for('breast_cancer_predict') }}" method="POST" onsubmit="return validate()">
+
+
+            <h1>Let's Predict</h1> <br>
+            <p>There are so many dignosis that we offer</p>
+
+                <div class="predict">
+                    <label for="first">Mean Radius</label>
+                    <span id="Error1" class="text-danger"></span>
+                    <input id="first" name="MeanRadius" placeholder="Range  5 to 30" required="required">
+                </div>
+
+                <div class="predict">
+                    <label for="second">Mean Texture</label>
+                    <span id="Error2" class="text-danger"></span>
+                    <input id="second" name="MeanTexture" placeholder="Range 1 to 50" required="required">
+                </div>
+
+                <div class="predict">
+
+                    <label for="third">Mean Perimeter</label>
+                    <span id="Error3" class="text-danger"></span>
+                    <input id="third" name="MeanPerimeter" placeholder="Range  40 to 200" required="required">
+                </div>
+
+
+                <div class="predict">
+                    <label for="fourth">Mean Area</label>
+                    <span id="Error4" class="text-danger"></span>
+                    <input id="fourth" name="MeanArea" placeholder="Range  100 to 200" required="required">
+                </div>
+
+                <div class="predict">
+
+                    <label for="fifth">Mean Smoothness</label>
+                    <span id="Error5" class="text-danger"></span>
+                    <input id="fifth" name="MeanSmoothness" placeholder="Range  0.01 to 0.5" required="required">
+                </div>
+
+
+                    <button class="btn" type="submit ">Submit</button>
+
+        </form>
+
+        <section class="footer">
+            <h4>Source</h4>
+            <p>Creators:
+
+            1. Dr. William H. Wolberg, General Surgery Dept.
+            University of Wisconsin, Clinical Sciences Center
+            Madison, WI 53792
+            wolberg '@' eagle.surgery.wisc.edu
+            
+            2. W. Nick Street, Computer Sciences Dept.
+            University of Wisconsin, 1210 West Dayton St., Madison, WI 53706
+            street '@' cs.wisc.edu 608-262-6619
+            
+            3. Olvi L. Mangasarian, Computer Sciences Dept.
+            University of Wisconsin, 1210 West Dayton St., Madison, WI 53706
+            olvi '@' cs.wisc.edu
+            
+            Donor:
+            
+            Nick Street</p>
+
+
+        </section>
+
+
+
+</body>
